@@ -1,3 +1,11 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 
-export default () => <div>Matheus Iácono</div>;
+export default () => (
+  <div>
+    <Helmet
+      title="Matheus Iácono"
+    />
+    Matheus Iácono
+  </div>
+);
