@@ -10,7 +10,8 @@
   },
   "dependencies": {
     "gatsby": "^1.9.238",
-    "gatsby-link": "^1.6.39"
+    "gatsby-link": "^1.6.39",
+    "gatsby-plugin-no-sourcemaps": "^1.0.5"
   },
   "devDependencies": {
     "eslint": "^4.19.0",
