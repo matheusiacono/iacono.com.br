@@ -1,0 +1,15 @@
+{
+  "name": "iacono.com.br",
+  "description": "Meu site pessoal",
+  "license": "MIT",
+  "author": "Matheus Iácono",
+  "scripts": {
+    "develop": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve"
+  },
+  "dependencies": {
+    "gatsby": "^1.9.238",
+    "gatsby-link": "^1.6.39"
+  }
+}
