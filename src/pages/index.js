@@ -1,11 +1,9 @@
-import React from 'react';
-import Helmet from 'react-helmet';
+import React, { Fragment } from 'react';
 
-export default () => (
-  <div>
-    <Helmet
-      title="Matheus Iácono"
-    />
-    Matheus Iácono
-  </div>
+const IndexPage = () => (
+  <Fragment>
+    Matheus
+  </Fragment>
 );
+
+export default IndexPage;
