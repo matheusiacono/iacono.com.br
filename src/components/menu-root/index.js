@@ -1,12 +1,13 @@
 import React from 'react';
+import Link from 'gatsby-link';
 
 const MenuRoot = () => (
   <nav>
     <ul>
-      <li>Início</li>
+      <li><Link to="/">Início</Link></li>
       <li>Artigos</li>
       <li>Rascunhos</li>
-      <li>Sobre</li>
+      <li><Link to="/sobre/">Sobre</Link></li>
       <li>Participe</li>
       <li>Procurar</li>
       <li>Contato</li>
