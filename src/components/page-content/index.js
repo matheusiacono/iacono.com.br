@@ -1,5 +1,6 @@
 import React from 'react';
-import Proptypes from 'prop-types';
+
+import ChildrenType from '../../utils/children-type';
 
 const PageContent = ({ children }) => (
   <main>
@@ -8,7 +9,7 @@ const PageContent = ({ children }) => (
 );
 
 PageContent.propTypes = {
-  children: Proptypes.element.isRequired,
+  children: ChildrenType.isRequired,
 };
 
 export default PageContent;
