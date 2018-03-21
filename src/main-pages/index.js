@@ -1,9 +1,17 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+
+import Main from '../containers/main';
 
 const IndexPage = () => (
-  <Fragment>
-    Matheus
-  </Fragment>
+  <Main>
+    Página inicial
+  </Main>
 );
 
 export default IndexPage;
+
+export const frontmatter = {
+  title: '',
+  author: 'Matheus Iácono',
+  path: '/',
+};
