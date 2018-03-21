@@ -22,5 +22,13 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/main-pages/`,
+      },
+    },
+    'gatsby-transformer-javascript-frontmatter',
   ],
 };
