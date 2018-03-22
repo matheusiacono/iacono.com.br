@@ -11,7 +11,7 @@ module.exports = {
     ],
   },
   settings: {
-    'import/core-modules': ['react', 'prop-types'],
+    'import/core-modules': ['react', 'prop-types', 'glamor'],
   },
   globals: {
     graphql: false,

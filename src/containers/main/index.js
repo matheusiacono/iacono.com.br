@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
+import 'glamor/reset';
 
 import Header from '../../components/header';
 import MenuRoot from '../../components/menu-root';
