@@ -6,17 +6,15 @@ import MenuItem from './menu-item';
 import MenuLink from './menu-link';
 
 const Menu = ({ menu }) => (
-  <nav>
-    <MenuList>
-      {menu.map(item => (
-        <MenuItem key={item.path}>
-          <MenuLink to={item.path} title={item.text}>
-            {item.text}
-          </MenuLink>
-        </MenuItem>
-      ))}
-    </MenuList>
-  </nav>
+  <MenuList>
+    {menu.map(item => (
+      <MenuItem key={item.path}>
+        <MenuLink to={item.path} title={item.text}>
+          {item.text}
+        </MenuLink>
+      </MenuItem>
+    ))}
+  </MenuList>
 );
 
 Menu.propTypes = {
