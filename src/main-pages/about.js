@@ -24,7 +24,7 @@ export const frontmatter = {
 export const query = graphql`
   query page($slug: String!) {
     javascriptFrontmatter(fields: { slug: { eq: $slug }}) {
-      ...frontMatterFields 
+      ...frontMatterFields
     }
   }
 `;
