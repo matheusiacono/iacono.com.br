@@ -2,13 +2,13 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 
-import Header from '../components/header';
-import MenuRoot from '../components/menu-root';
-import PageContent from '../components/page-content';
-import Footer from '../components/footer';
+import Header from '../../components/header';
+import MenuRoot from '../../components/menu-root';
+import PageContent from '../../components/page-content';
+import Footer from '../../components/footer';
 
-import ChildrenType from '../utils/children-type';
-import appendTitle from '../utils/append-title';
+import ChildrenType from '../../utils/children-type';
+import appendTitle from '../../utils/append-title';
 
 const Main = ({ children, title }) => (
   <Fragment>
