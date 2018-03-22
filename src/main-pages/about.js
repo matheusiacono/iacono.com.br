@@ -1,20 +1,19 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 import Main from '../containers/main';
+import queryFrontMatter from '../utils/query-frontmatter';
+import FrontMatterType from '../utils/frontmatter-type';
+import getFrontMatter from '../utils/get-frontmatter';
 
-const AboutPage = ({ data: { javascriptFrontmatter: { frontmatter: { title } } } }) => (
-  <Main title={title}>Sobre</Main>
-);
+const AboutPage = ({ data }) => {
+  const { title } = getFrontMatter(data);
+  return (
+    <Main title={title}>Sobre</Main>
+  );
+};
 
 AboutPage.propTypes = {
-  data: PropTypes.shape({
-    javascriptFrontmatter: PropTypes.shape({
-      frontmatter: PropTypes.shape({
-        title: PropTypes.string,
-      }),
-    }),
-  }).isRequired,
+  data: FrontMatterType.isRequired,
 };
 
 export default AboutPage;
@@ -25,12 +24,4 @@ export const frontmatter = {
   path: '/sobre/',
 };
 
-export const pageQuery = graphql`
-  query aboutPage($slug: String!) {
-    javascriptFrontmatter(fields: { slug: { eq: $slug }}) {
-      frontmatter {
-        title
-      }
-    }
-  }
-`;
+export const query = queryFrontMatter;
