@@ -7,7 +7,7 @@ const MenuList = glamorous.ul({
   padding: '0 2rem',
   borderBottom: '1px solid #ccc',
   listStyle: 'none',
-  margin: '0 0 1.5rem 0',
+  margin: '0',
 });
 
 export default MenuList;
