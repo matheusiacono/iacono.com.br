@@ -1,10 +1,17 @@
 import React from 'react';
+import glamorous from 'glamorous';
 
 import Main from '../containers/main';
 
+const BlueDiv = glamorous.div({
+  backgroundColor: 'blue',
+});
+
 const IndexPage = () => (
   <Main>
-    Página inicial
+    <BlueDiv>
+      Página inicial
+    </BlueDiv>
   </Main>
 );
 
