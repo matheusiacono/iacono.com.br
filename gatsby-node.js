@@ -17,7 +17,6 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     }
 
     createNodeField({ node, name: 'slug', value: slug });
-    createNodeField({ node, name: 'source', value: fileNode.sourceInstanceName });
   }
 };
 
@@ -32,8 +31,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             node {
               fileAbsolutePath
               frontmatter {
-                title
-                author
                 path
                 error
               }
@@ -56,9 +53,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           createPage({
             path: frontmatter.path,
             component: path.resolve(edge.node.fileAbsolutePath),
-            context: {
-              slug: edge.node.fields.slug,
-            },
           });
         }
       });

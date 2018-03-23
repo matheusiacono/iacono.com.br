@@ -11,7 +11,5 @@ const ErrorPage = () => (
 export default ErrorPage;
 
 export const frontmatter = {
-  title: 'Página não encontrada',
-  author: 'Matheus Iácono',
   path: '/404/',
 };

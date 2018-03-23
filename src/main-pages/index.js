@@ -11,7 +11,5 @@ const IndexPage = () => (
 export default IndexPage;
 
 export const frontmatter = {
-  title: '',
-  author: 'Matheus Iácono',
   path: '/',
 };
