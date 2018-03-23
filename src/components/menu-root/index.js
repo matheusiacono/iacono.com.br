@@ -11,7 +11,6 @@ const MenuRoot = () => (
         { text: 'Rascunhos', path: '/rascunhos/' },
         { text: 'Sobre', path: '/sobre/' },
         { text: 'Participe', path: '/participe/' },
-        { text: 'Procurar', path: '/procurar/' },
         { text: 'Contato', path: '/contato/' },
       ]}
     />
