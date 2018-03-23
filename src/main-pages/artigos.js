@@ -5,7 +5,3 @@ import Main from '../containers/main';
 const ArticlesPage = () => <Main title="Artigos">Artigos</Main>;
 
 export default ArticlesPage;
-
-export const frontmatter = {
-  path: '/artigos/',
-};

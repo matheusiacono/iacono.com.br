@@ -9,7 +9,3 @@ const ErrorPage = () => (
 );
 
 export default ErrorPage;
-
-export const frontmatter = {
-  path: '/404/',
-};
