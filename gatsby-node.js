@@ -17,6 +17,7 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
     }
 
     createNodeField({ node, name: 'slug', value: slug });
+    createNodeField({ node, name: 'source', value: fileNode.sourceInstanceName });
   }
 };
 
@@ -42,7 +43,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             }
           }
         }
-      } 
+      }
     `).then((result) => {
       if (result.errors) {
         reject(result.errors);
