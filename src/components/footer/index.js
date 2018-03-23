@@ -5,7 +5,7 @@ const SweepToRight = g.a({
   background: '#999',
   color: '#333',
 
-  display: 'flex',
+  display: 'block',
   verticalAlign: 'middle',
   transform: 'perspective(1px) translateZ(0)',
   boxShadow: '0 0 1px transparent',
@@ -38,7 +38,6 @@ const SweepToRight = g.a({
 });
 
 const ExternalLink = g(SweepToRight)({
-  display: 'block',
   padding: '0.5rem 1rem',
   textDecoration: 'none',
 });
