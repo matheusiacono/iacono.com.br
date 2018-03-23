@@ -16,7 +16,7 @@ DraftsPage.propTypes = {
 export default DraftsPage;
 
 export const frontmatter = {
-  title: 'Drafts',
+  title: 'Rascunhos',
   author: 'Matheus Iácono',
   path: '/rascunhos/',
 };
