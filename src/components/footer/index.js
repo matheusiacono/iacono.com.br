@@ -1,9 +1,11 @@
 import React from 'react';
 import g from 'glamorous';
 
+import colors from '../../utils/colors';
+
 const SweepToRight = g.a({
-  background: '#999',
-  color: '#333',
+  background: colors.externalSecundary,
+  color: '#FFF',
 
   display: 'block',
   verticalAlign: 'middle',
@@ -20,7 +22,7 @@ const SweepToRight = g.a({
     left: '0',
     right: '0',
     bottom: '0',
-    background: '#333',
+    background: colors.externalPrimary,
     transform: 'scaleX(0)',
     transformOrigin: '0 50%',
     transitionProperty: 'transform',
@@ -28,11 +30,11 @@ const SweepToRight = g.a({
     transitionTimingFunction: 'ease-out',
   },
 
-  ':hover,:focus,:active': {
-    color: 'white',
+  ':hover': {
+    color: '#FFF',
   },
 
-  ':hover:before,:focus:before,:active:before': {
+  ':hover:before': {
     transform: 'scaleX(1)',
   },
 });
@@ -52,10 +54,10 @@ const Footer = () => {
       display="flex"
       alignItems="center"
       padding="1rem 4rem"
-      backgroundColor="#eee"
+      backgroundColor={colors.secondary}
       flexShrink="0"
     >
-      <p>&copy; 2018 Matheus Iácono</p>
+      <g.P color={colors.info}>&copy; 2018 Matheus Iácono</g.P>
       <g.Ul listStyle="none" display="flex" marginLeft="auto" padding="0">
         {items.map(item => (
           <g.Li flex="1 1 auto" marginRight=".2rem" textDecoration="none" key={item.text}>

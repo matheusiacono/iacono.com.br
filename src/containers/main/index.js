@@ -11,8 +11,12 @@ import Footer from '../../components/footer';
 
 import ChildrenType from '../../utils/children-type';
 import appendTitle from '../../utils/append-title';
+import colors from '../../utils/colors';
 
 css.global('html, body', { width: '100%', height: '100%' });
+css.global('body', {
+  color: colors.text,
+});
 css.global('#___gatsby', {
   height: '100%',
 });

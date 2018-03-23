@@ -1,11 +1,12 @@
 import glamorous from 'glamorous';
 
+import colors from '../../../utils/colors';
+
 const MenuList = glamorous.ul({
-  backgroundColor: '#eee',
+  backgroundColor: colors.secondary,
   border: 0,
   display: 'flex',
-  padding: '0 2rem',
-  borderBottom: '1px solid #ccc',
+  padding: '0 4rem',
   listStyle: 'none',
   margin: '0',
 });
