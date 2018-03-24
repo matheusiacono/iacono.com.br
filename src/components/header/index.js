@@ -21,6 +21,7 @@ const Header = ({ menu }) => {
     <g.Header flexShrink="0" backgroundColor={colors.secondary}>
       <g.H1
         display="flex"
+        fontFamily="Montserrat, sans-serif"
         fontSize="2.5em"
         justifyContent="center"
         margin="0"
