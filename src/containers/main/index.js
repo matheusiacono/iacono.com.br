@@ -11,8 +11,8 @@ import Footer from '../../components/footer';
 
 import ChildrenType from '../../utils/children-type';
 import appendTitle from '../../utils/append-title';
-import colors from '../../utils/colors';
-import fonts from '../../utils/fonts';
+import colors from '../../styles/colors';
+import fonts from '../../styles/fonts';
 
 css.global('@font-face', {
   fontFamily: 'Montserrat',

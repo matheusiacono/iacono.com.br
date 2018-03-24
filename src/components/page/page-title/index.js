@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
 
-import colors from '../../../utils/colors';
+import colors from '../../../styles/colors';
 
 const PageTitle = glamorous.h1({
   display: 'flex',

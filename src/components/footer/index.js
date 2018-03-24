@@ -1,7 +1,7 @@
 import React from 'react';
 import g from 'glamorous';
 
-import colors from '../../utils/colors';
+import colors from '../../styles/colors';
 
 const SweepToRight = g.a({
   background: colors.externalSecundary,

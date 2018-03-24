@@ -1,7 +1,7 @@
 import React from 'react';
 import { Main } from 'glamorous';
 
-import colors from '../../utils/colors';
+import colors from '../../styles/colors';
 import ChildrenType from '../../utils/children-type';
 
 const PageContent = ({ children }) => (

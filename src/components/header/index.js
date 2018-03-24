@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Link from 'gatsby-link';
 import g from 'glamorous';
 
-import colors from '../../utils/colors';
+import colors from '../../styles/colors';
 
 const RootLink = g(Link)({
   color: 'inherit',

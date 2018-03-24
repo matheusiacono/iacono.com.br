@@ -1,6 +1,6 @@
 import glamorous from 'glamorous';
 
-import colors from '../../../utils/colors';
+import colors from '../../../styles/colors';
 
 const MenuItem = glamorous.li({
   backgroundImage: `linear-gradient(to bottom, transparent 50%, ${colors.primary} 50%, ${
