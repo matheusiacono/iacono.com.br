@@ -1,17 +1,21 @@
-import MontserratBoldWoff from '../assets/fonts/montserrat-bold-webfont.woff';
-import MontserratBoldWoff2 from '../assets/fonts/montserrat-bold-webfont.woff2';
-import MontserratRegularWoff from '../assets/fonts/montserrat-regular-webfont.woff';
-import MontserratRegularWoff2 from '../assets/fonts/montserrat-regular-webfont.woff2';
+import { css } from 'glamor';
 
-import RalewayBoldWoff from '../assets/fonts/raleway-bold-webfont.woff';
-import RalewayBoldWoff2 from '../assets/fonts/raleway-bold-webfont.woff2';
-import RalewayRegularWoff from '../assets/fonts/raleway-regular-webfont.woff';
-import RalewayRegularWoff2 from '../assets/fonts/raleway-regular-webfont.woff2';
+import MontserratRegularWoff from '../assets/fonts/montserrat-regular.woff';
+import MontserratRegularWoff2 from '../assets/fonts/montserrat-regular.woff2';
+import MontserratBoldWoff from '../assets/fonts/montserrat-bold.woff';
+import MontserratBoldWoff2 from '../assets/fonts/montserrat-bold.woff2';
 
-import EmbossedGermanicaWoff from '../assets/fonts/embossed-germanica.woff';
-import EmbossedGermanicaWoff2 from '../assets/fonts/embossed-germanica.woff2';
+import LoraRegularWoff from '../assets/fonts/lora-regular.woff';
+import LoraRegularWoff2 from '../assets/fonts/lora-regular.woff2';
+import LoraItalicWoff from '../assets/fonts/lora-italic.woff';
+import LoraItalicWoff2 from '../assets/fonts/lora-italic.woff2';
+import LoraBoldWoff from '../assets/fonts/lora-bold.woff';
+import LoraBoldWoff2 from '../assets/fonts/lora-bold.woff2';
+import LoraBoldItalicWoff from '../assets/fonts/lora-bolditalic.woff';
+import LoraBoldItalicWoff2 from '../assets/fonts/lora-bolditalic.woff2';
 
-export default {
+
+const fonts = {
   montserrat: {
     regular: {
       woff: MontserratRegularWoff,
@@ -22,18 +26,76 @@ export default {
       woff2: MontserratBoldWoff2,
     },
   },
-  raleway: {
+  lora: {
     regular: {
-      woff: RalewayRegularWoff,
-      woff2: RalewayRegularWoff2,
+      woff: LoraRegularWoff,
+      woff2: LoraRegularWoff2,
     },
     bold: {
-      woff: RalewayBoldWoff,
-      woff2: RalewayBoldWoff2,
+      woff: LoraBoldWoff,
+      woff2: LoraBoldWoff2,
+    },
+    italic: {
+      woff: LoraItalicWoff,
+      woff2: LoraItalicWoff2,
+    },
+    boldItalic: {
+      woff: LoraBoldItalicWoff,
+      woff2: LoraBoldItalicWoff2,
     },
   },
-  embossedGermanica: {
-    woff: EmbossedGermanicaWoff,
-    woff2: EmbossedGermanicaWoff2,
-  },
 };
+
+css.global('@font-face', {
+  fontFamily: 'Montserrat',
+  src: `local('Montserrat Regular'), local('Montserrat-Regular'),
+    url(${fonts.montserrat.regular.woff2}) format('woff2'),
+    url(${fonts.montserrat.regular.woff}) format('woff')`,
+  fontWeight: '400',
+  fontStyle: 'normal',
+});
+
+css.global('@font-face', {
+  fontFamily: 'Montserrat',
+  src: `local('Montserrat Bold'), local('Montserrat-Bold'),
+    url(${fonts.montserrat.bold.woff2}) format('woff2'),
+    url(${fonts.montserrat.bold.woff}) format('woff')`,
+  fontWeight: '700',
+  fontStyle: 'normal',
+});
+
+css.global('@font-face', {
+  fontFamily: 'Lora',
+  src: `local('Lora Regular'), local('Lora-Regular'),
+    url(${fonts.lora.regular.woff2}) format('woff2'),
+    url(${fonts.lora.regular.woff}) format('woff')`,
+  fontWeight: '400',
+  fontStyle: 'normal',
+});
+
+css.global('@font-face', {
+  fontFamily: 'Lora',
+  src: `local('Lora Italic'), local('Lora-Italic'),
+    url(${fonts.lora.italic.woff2}) format('woff2'),
+    url(${fonts.lora.italic.woff}) format('woff')`,
+  fontWeight: '400',
+  fontStyle: 'italic',
+});
+
+css.global('@font-face', {
+  fontFamily: 'Lora',
+  src: `local('Lora Bold Italic'), local('Lora-Bold-Italic'),
+    url(${fonts.lora.boldItalic.woff2}) format('woff2'),
+    url(${fonts.lora.boldItalic.woff}) format('woff')`,
+  fontWeight: '700',
+  fontStyle: 'italic',
+});
+
+css.global('@font-face', {
+  fontFamily: 'Lora',
+  src: `local('Lora Bold'), local('Lora-Bold'),
+    url(${fonts.lora.bold.woff2}) format('woff2'),
+    url(${fonts.lora.bold.woff}) format('woff')`,
+  fontWeight: '700',
+  fontStyle: 'normal',
+});
