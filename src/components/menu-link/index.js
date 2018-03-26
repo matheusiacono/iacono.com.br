@@ -2,8 +2,10 @@ import Link from 'gatsby-link';
 import { presets } from 'glamor';
 import glamorous from 'glamorous';
 
+import colors from '../../styles/colors';
+
 const MenuLink = glamorous(Link)({
-  color: 'inherit',
+  color: colors.light(),
   display: 'inline-block',
   padding: '1rem',
   textDecoration: 'none',
