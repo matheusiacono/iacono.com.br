@@ -1,27 +1,17 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-import MenuList from './menu-list';
-import MenuItem from './menu-item';
-import MenuLink from './menu-link';
+import MenuList from '../menu-list';
 
-const Menu = ({ menu }) => (
-  <MenuList>
-    {menu.map(item => (
-      <MenuItem key={item.path}>
-        <MenuLink to={item.path} title={item.text}>
-          {item.text}
-        </MenuLink>
-      </MenuItem>
-    ))}
-  </MenuList>
+const Menu = () => (
+  <MenuList
+    menu={[
+      { text: 'Artigos', path: '/artigos/' },
+      { text: 'Rascunhos', path: '/rascunhos/' },
+      { text: 'Sobre', path: '/sobre/' },
+      { text: 'Participe', path: '/participe/' },
+      { text: 'Contato', path: '/contato/' },
+    ]}
+  />
 );
-
-Menu.propTypes = {
-  menu: PropTypes.arrayOf(PropTypes.shape({
-    path: PropTypes.string,
-    text: PropTypes.string,
-  })).isRequired,
-};
 
 export default Menu;
