@@ -1,5 +1,6 @@
 export default {
-  text: '#161925',
+  text: '#23395B',
+  dark: alpha => (alpha ? `rgba(35, 57, 91, ${alpha})` : '#23395B'),
   link: '#406E8E',
   primary: '#83C9F4',
   secondary: '#CBF7ED',
@@ -9,7 +10,4 @@ export default {
   externalSecundary: '#05668D',
 
   info: '#550C18',
-
-  c8: '#EC9A29',
-  c9: '#F87060',
 };
