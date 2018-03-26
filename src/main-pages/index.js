@@ -1,12 +1,13 @@
 import React from 'react';
 
-import Main from '../containers/main';
-import PageTitle from '../components/page/page-title';
+import Page from '../components/page';
+
+import postImage from '../assets/img/home-background.jpeg';
 
 const IndexPage = () => (
-  <Main>
-    <PageTitle>Página Inicial</PageTitle>
-  </Main>
+  <Page title="Sempre Aprendendo" image={postImage}>
+    {' '}
+  </Page>
 );
 
 export default IndexPage;

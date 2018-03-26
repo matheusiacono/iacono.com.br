@@ -1,12 +1,9 @@
 import React from 'react';
 
-import Main from '../containers/main';
-import PageTitle from '../components/page/page-title';
+import Page from '../components/page';
 
-const ContactPage = () => (
-  <Main title="Contato">
-    <PageTitle>Contato</PageTitle>
-  </Main>
-);
+import postImage from '../assets/img/home-background.jpeg';
+
+const ContactPage = () => <Page pageTitle="Contato" title="Contato" image={postImage} />;
 
 export default ContactPage;

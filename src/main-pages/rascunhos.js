@@ -1,12 +1,9 @@
 import React from 'react';
 
-import Main from '../containers/main';
-import PageTitle from '../components/page/page-title';
+import Page from '../components/page';
 
-const DraftsPage = () => (
-  <Main title="Rascunhos">
-    <PageTitle>Rascunhos</PageTitle>
-  </Main>
-);
+import postImage from '../assets/img/home-background.jpeg';
+
+const DraftsPage = () => <Page pageTitle="Rascunhos" title="Rascunhos" image={postImage} />;
 
 export default DraftsPage;

@@ -1,12 +1,11 @@
 import React from 'react';
 
-import Main from '../containers/main';
-import PageTitle from '../components/page/page-title';
+import Page from '../components/page';
+
+import postImage from '../assets/img/home-background.jpeg';
 
 const ErrorPage = () => (
-  <Main title="Página não encontrada">
-    <PageTitle>Página não encontrada</PageTitle>
-  </Main>
+  <Page pageTitle="Página não encontrada" title="Página não encontrada" image={postImage} />
 );
 
 export default ErrorPage;

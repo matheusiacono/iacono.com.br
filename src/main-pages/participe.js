@@ -1,12 +1,9 @@
 import React from 'react';
 
-import Main from '../containers/main';
-import PageTitle from '../components/page/page-title';
+import Page from '../components/page';
 
-const GetInvolvedPage = () => (
-  <Main title="Participe">
-    <PageTitle>Participe</PageTitle>
-  </Main>
-);
+import postImage from '../assets/img/home-background.jpeg';
+
+const GetInvolvedPage = () => <Page pageTitle="Participe" title="Participe" image={postImage} />;
 
 export default GetInvolvedPage;
