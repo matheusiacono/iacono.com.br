@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { presets } from 'glamor';
 import g from 'glamorous';
 
 import colors from '../../styles/colors';
@@ -9,7 +10,7 @@ const PostHeaderImage = g.div(({ image }) => ({
   backgroundRepeat: 'no-repeat',
   backgroundPosition: 'center',
   backgroundColor: colors.dark(),
-  position: 'fixed',
+  position: 'absolute',
   opacity: '.4',
   width: '100%',
   height: '100%',
@@ -26,6 +27,10 @@ const PostHeaderImage = g.div(({ image }) => ({
     top: '0',
     left: '0',
     zIndex: '2',
+  },
+
+  [presets.Desktop]: {
+    position: 'fixed',
   },
 }));
 
