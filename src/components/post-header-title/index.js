@@ -8,6 +8,7 @@ const PostHeaderTitle = g.h1({
   color: '#FFF',
   textAlign: 'center',
   zIndex: '3',
+  marginTop: '4em',
   [presets.Tablet]: {
     fontSize: '4em',
   },
