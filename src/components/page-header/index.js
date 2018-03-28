@@ -36,6 +36,7 @@ const Header = g.header(({ slideUp, onTop, notScrolled }) => ({
   zIndex: '4',
   paddingTop: '1rem',
   transition: 'background-color .3s ease',
+  willChange: 'transform',
   animationDuration: '.3s',
   animationFillMode: 'both',
   animationName: !notScrolled && (slideUp ? slideDownAnimation : slideUpAnimation),
@@ -47,7 +48,7 @@ const Header = g.header(({ slideUp, onTop, notScrolled }) => ({
   [presets.Desktop]: {
     paddingTop: '0',
     alignItems: 'center',
-    gridTemplateRows: '100px',
+    gridTemplateRows: '80px',
   },
 }));
 
