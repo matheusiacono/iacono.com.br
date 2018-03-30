@@ -3,4 +3,5 @@ export default {
   light: () => '#CBF7ED',
   primary: () => '#83C9F4',
   secondary: () => '#406E8E',
+  text: () => '#333',
 };
