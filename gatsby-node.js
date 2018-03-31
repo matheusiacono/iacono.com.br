@@ -6,12 +6,36 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allFile {
+        allFile(filter: { sourceInstanceName: { eq: "main-pages" } }) {
           edges {
             node {
               absolutePath
               relativePath
               sourceInstanceName
+            }
+          }
+        }
+        artigos: allJavascriptFrontmatter(
+          filter: { node: { sourceInstanceName: { eq: "artigos" } } }
+        ) {
+          edges {
+            node {
+              fileAbsolutePath
+              frontmatter {
+                path
+              }
+            }
+          }
+        }
+        rascunhos: allJavascriptFrontmatter(
+          filter: { node: { sourceInstanceName: { eq: "rascunhos" } } }
+        ) {
+          edges {
+            node {
+              fileAbsolutePath
+              frontmatter {
+                path
+              }
             }
           }
         }
@@ -37,18 +61,26 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           slug = '/';
         }
 
-        let pagePath = '';
-        if (edge.node.sourceInstanceName === 'main-pages') {
-          pagePath = slug;
-        } else {
-          pagePath = `/${edge.node.sourceInstanceName}${slug}`;
-        }
-
         createPage({
-          path: pagePath,
+          path: slug,
           component: path.resolve(edge.node.absolutePath),
         });
       });
+
+      const createPageFromEdge = (edge) => {
+        createPage({
+          path: edge.node.frontmatter.path,
+          component: path.resolve(edge.node.fileAbsolutePath),
+        });
+      };
+
+      if (result.data.artigos) {
+        result.data.artigos.edges.forEach(createPageFromEdge);
+      }
+
+      if (result.data.rascunhos) {
+        result.data.rascunhos.edges.forEach(createPageFromEdge);
+      }
 
       resolve();
     });

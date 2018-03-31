@@ -45,6 +45,20 @@ module.exports = {
         path: `${__dirname}/src/main-pages/`,
       },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'artigos',
+        path: `${__dirname}/src/artigos/`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'resenhas',
+        path: `${__dirname}/src/resenhas/`,
+      },
+    },
     'gatsby-transformer-javascript-frontmatter',
     {
       resolve: 'gatsby-plugin-sitemap',
