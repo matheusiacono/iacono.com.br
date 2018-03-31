@@ -20,7 +20,12 @@ const SocialLinks = () => (
   >
     {extLinks.map(item => (
       <Li key={item.text} display="flex" alignItems="center">
-        <a target="_blank" rel="noopener noreferrer" href={item.link} title={item.text}>
+        <a
+          target="_blank"
+          rel="noopener noreferrer nofollow external"
+          href={item.link}
+          title={item.text}
+        >
           <img src={item.img} alt={item.text} />
         </a>
       </Li>
