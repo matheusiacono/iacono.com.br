@@ -1,4 +1,9 @@
 module.exports = {
+  site: {
+    siteMetadata: {
+      siteUrl: 'https://iacono.com.br',
+    },
+  },
   plugins: [
     'gatsby-plugin-react-next',
     'gatsby-plugin-react-helmet',
@@ -40,5 +45,8 @@ module.exports = {
       },
     },
     'gatsby-transformer-javascript-frontmatter',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+    },
   ],
 };
