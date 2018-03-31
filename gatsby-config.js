@@ -1,8 +1,9 @@
 module.exports = {
-  site: {
-    siteMetadata: {
-      siteUrl: 'https://iacono.com.br',
-    },
+  siteMetadata: {
+    title: 'Matheus Iácono',
+    description: 'Uma visão pessoal sobre o desenvolvimento front end',
+    siteUrl: 'https://iacono.com.br',
+    author: 'Matheus Iácono',
   },
   plugins: [
     'gatsby-plugin-react-next',
@@ -47,6 +48,9 @@ module.exports = {
     'gatsby-transformer-javascript-frontmatter',
     {
       resolve: 'gatsby-plugin-sitemap',
+    },
+    {
+      resolve: 'gatsby-plugin-feed-generator',
     },
   ],
 };

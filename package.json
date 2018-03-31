@@ -13,6 +13,7 @@
     "gatsby": "^1.9.238",
     "gatsby-link": "^1.6.39",
     "gatsby-plugin-favicon": "^2.1.1",
+    "gatsby-plugin-feed-generator": "^1.0.5",
     "gatsby-plugin-glamor": "^1.6.13",
     "gatsby-plugin-google-analytics": "^1.0.24",
     "gatsby-plugin-no-sourcemaps": "^1.0.5",
