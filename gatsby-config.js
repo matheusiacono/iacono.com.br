@@ -59,5 +59,12 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-feed-generator',
     },
+    {
+      resolve: 'gatsby-plugin-nprogress',
+      options: {
+        color: '#CBF7ED',
+        showSpinner: false,
+      },
+    },
   ],
 };
