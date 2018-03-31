@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Page from '../components/page';
 import PostList, { AllMarkdownRemarkType } from '../components/post-list';
 
-import postImage from '../assets/img/home-background.jpeg';
+import postImage from '../assets/img/rascunhos-background.jpeg';
 
 const DraftsPage = ({ data }) => (
   <Page pageTitle="Rascunhos" title="Rascunhos" image={postImage}>
