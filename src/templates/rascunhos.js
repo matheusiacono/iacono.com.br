@@ -7,12 +7,14 @@ import Page from '../components/page';
 import appendTitle from '../utils/append-title';
 import postImage from '../assets/img/home-background.jpeg';
 
-const DraftsTemplate = ({ data: { markdownRemark: { frontmatter, html } } }) => (
+const DraftsTemplate = ({
+  data: { markdownRemark: { frontmatter: { title, date, attachments }, html } },
+}) => (
   <Page
-    pageTitle={appendTitle(frontmatter.title, 'Rascunhos')}
-    title={frontmatter.title}
-    subtitle={frontmatter.date}
-    image={postImage}
+    pageTitle={appendTitle(title, 'Rascunhos')}
+    title={title}
+    subtitle={date}
+    image={attachments && attachments.length > 0 ? attachments[0].publicURL : postImage}
   >
     <div dangerouslySetInnerHTML={{ __html: html }} />
   </Page>
@@ -25,6 +27,9 @@ DraftsTemplate.propTypes = {
       frontmatter: PropTypes.shape({
         title: PropTypes.string,
         date: PropTypes.string,
+        attachments: PropTypes.arrayOf(PropTypes.shape({
+          publicURL: PropTypes.string,
+        })),
       }),
     }),
   }).isRequired,
@@ -39,6 +44,9 @@ export const query = graphql`
       frontmatter {
         date(formatString: "DD [de] MMMM [de] YYYY", locale: "pt-BR")
         title
+        attachments {
+          publicURL
+        }
       }
     }
   }
