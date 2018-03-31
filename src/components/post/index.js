@@ -13,9 +13,11 @@ const Main = g.main({
   overflow: 'hidden',
 });
 
-const Post = ({ children, title, image }) => (
+const Post = ({
+  children, title, subtitle, image,
+}) => (
   <Main>
-    <PostHeader title={title} image={image} />
+    <PostHeader title={title} subtitle={subtitle} image={image} />
     {children && <PostContent>{children}</PostContent>}
   </Main>
 );
@@ -23,11 +25,13 @@ const Post = ({ children, title, image }) => (
 Post.propTypes = {
   children: ChildrenType,
   title: PropTypes.string.isRequired,
+  subtitle: PropTypes.string,
   image: PropTypes.string.isRequired,
 };
 
 Post.defaultProps = {
   children: undefined,
+  subtitle: ' ',
 };
 
 export default Post;
