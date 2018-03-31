@@ -1,4 +1,5 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import g from 'glamorous';
 
 import Container from '../components/curriculum/container';
@@ -11,10 +12,14 @@ import Languages from '../components/curriculum/languages';
 import SkillsContainer from '../components/curriculum/skills-container';
 import Skills from '../components/curriculum/skills';
 
+import appendTitle from '../utils/append-title';
 import data from '../assets/data/curriculum';
 
 const CurriculumPage = () => (
   <Container>
+    <Helmet title={appendTitle('Currículo', 'Matheus Iácono')}>
+      <html lang="pt-BR" />
+    </Helmet>
     <CurriculumLink to="/sobre/#sobre-mim">Voltar para o site</CurriculumLink>
 
     <g.Div textAlign="right">
