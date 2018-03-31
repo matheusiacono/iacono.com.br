@@ -11,7 +11,9 @@ import '../../styles/fonts';
 
 const Page = props => (
   <Fragment>
-    <Helmet title={appendTitle(props.pageTitle, 'Matheus Iácono')} />
+    <Helmet title={appendTitle(props.pageTitle, 'Matheus Iácono')}>
+      <html lang="pt-BR" />
+    </Helmet>
     <PageHeader />
     <Post {...props} />
   </Fragment>
