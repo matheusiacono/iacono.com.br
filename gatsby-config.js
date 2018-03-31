@@ -41,13 +41,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'main-pages',
-        path: `${__dirname}/src/main-pages/`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         name: 'artigos',
         path: `${__dirname}/src/artigos/`,
       },
@@ -55,11 +48,11 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'resenhas',
-        path: `${__dirname}/src/resenhas/`,
+        name: 'rascunhos',
+        path: `${__dirname}/src/rascunhos/`,
       },
     },
-    'gatsby-transformer-javascript-frontmatter',
+    'gatsby-transformer-remark',
     {
       resolve: 'gatsby-plugin-sitemap',
     },
