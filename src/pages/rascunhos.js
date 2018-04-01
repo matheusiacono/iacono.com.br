@@ -9,8 +9,7 @@ import postImage from '../assets/img/rascunhos-background.jpeg';
 const DraftsPage = ({ data }) => (
   <Page pageTitle="Rascunhos" title="Rascunhos" image={postImage}>
     <p>
-      Algumas opiniões e considerações aleatórias, além de recomendações por um desenvolvedor front
-      end nordestino.
+      Recomendações, opiniões e considerações aleatórias de um desenvolvedor front end nordestino.
     </p>
     <PostList items={data.rascunhos} />
   </Page>
