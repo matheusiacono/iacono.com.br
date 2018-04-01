@@ -9,8 +9,8 @@ import postImage from '../assets/img/artigos-background.jpeg';
 const ArticlesPage = ({ data }) => (
   <Page pageTitle="Artigos" title="Artigos" image={postImage}>
     <p>
-      Front End, Desenvolvimento de Games, Design Patterns, React, Javascript, Cálculo. Um pouco de
-      tudo o que estudo.
+      Javascript, React, Front End em geral, Desenvolvimento de Games, Design Patterns, um pouco de
+      Matemática, um pouco de Filosofia. Um apanhado geral do que estou estudando.
     </p>
     <PostList items={data.artigos} />
   </Page>
