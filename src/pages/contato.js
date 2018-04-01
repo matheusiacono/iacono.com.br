@@ -17,7 +17,7 @@ import postImage from '../assets/img/contato-background.jpeg';
 const Grid = g.div({
   fontFamily: 'Montserrat, sans-serif',
 
-  [presets.Tablet]: {
+  [presets.Desktop]: {
     width: '60%',
     margin: '0 auto',
   },
