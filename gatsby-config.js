@@ -66,5 +66,11 @@ module.exports = {
         showSpinner: false,
       },
     },
+    {
+      resolve: 'gatsby-plugin-react-svg',
+      options: {
+        include: /assets\/svg/,
+      },
+    },
   ],
 };
