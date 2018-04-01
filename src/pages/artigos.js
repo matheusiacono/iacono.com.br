@@ -10,7 +10,7 @@ const ArticlesPage = ({ data }) => (
   <Page pageTitle="Artigos" title="Artigos" image={postImage}>
     <p>
       Javascript, React, Front End em geral, Desenvolvimento de Games, Design Patterns, um pouco de
-      Matemática, um pouco de Filosofia. Um apanhado geral do que estou estudando.
+      Matemática, um pouco de Filosofia. Uma mistura do que estou sempre estudando.
     </p>
     <PostList items={data.artigos} />
   </Page>
