@@ -7,6 +7,7 @@ import Logo from '../logo';
 import SocialLinks from '../social-links';
 import Menu from '../menu';
 
+import throttle from '../../utils/throttle';
 import colors from '../../styles/colors';
 
 const slideDownAnimation = keyframes({
@@ -95,12 +96,14 @@ class PageHeader extends Component {
   }
 
   handleScroll() {
-    this.setState(prevState => ({
-      scrollY: window.scrollY,
-      slideUp: window.scrollY <= this.state.scrollY,
-      onTop: window.scrollY === 0,
-      notScrolled: prevState.scrollY === 0 && window.scrollY !== 0,
-    }));
+    throttle((cb) => {
+      this.setState(prevState => ({
+        scrollY: window.scrollY,
+        slideUp: window.scrollY <= this.state.scrollY,
+        onTop: window.scrollY === 0,
+        notScrolled: prevState.scrollY === 0 && window.scrollY !== 0,
+      }), cb());
+    })();
   }
 
   render() {
