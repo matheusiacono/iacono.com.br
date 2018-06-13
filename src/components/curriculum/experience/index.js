@@ -12,7 +12,7 @@ const Experience = ({ items }) => (
             marginLeft="auto"
             color="#FFF"
             backgroundColor="#000"
-            width="90px"
+            width="130px"
             textAlign="right"
             height="100%"
           >
