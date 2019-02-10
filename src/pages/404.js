@@ -1,11 +1,32 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
-import Page from '../components/page';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import postImage from '../assets/img/404-background.jpeg';
+class NotFoundPage extends React.Component {
+  render() {
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
 
-const ErrorPage = () => (
-  <Page pageTitle="Página não encontrada" title="Página não encontrada" image={postImage} />
-);
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO title="404: Not Found" />
+        <h1>Not Found</h1>
+        <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+      </Layout>
+    );
+  }
+}
 
-export default ErrorPage;
+export default NotFoundPage;
+
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+  }
+`;

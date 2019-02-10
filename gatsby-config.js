@@ -1,17 +1,54 @@
 module.exports = {
   siteMetadata: {
     title: 'Matheus Iácono',
-    description: 'Uma visão pessoal sobre o desenvolvimento front end',
-    siteUrl: 'https://iacono.com.br',
     author: 'Matheus Iácono',
+    description:
+      'Matheus Iácono | Blog Pessoal | Desenvolvendo software e outras coisas',
+    siteUrl: 'https://iacono.com.br',
+    social: {
+      twitter: 'matheusiacono',
+    },
   },
   plugins: [
-    'gatsby-plugin-react-next',
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-glamor',
     {
-      resolve: 'gatsby-plugin-no-sourcemaps',
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: 'blog',
+      },
     },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: 'assets',
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 590,
+            },
+          },
+          {
+            resolve: 'gatsby-remark-responsive-iframe',
+            options: {
+              wrapperStyle: 'margin-bottom: 1.0725rem',
+            },
+          },
+          'gatsby-remark-autolink-headers',
+          'gatsby-remark-prismjs',
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants',
+        ],
+      },
+    },
+    'gatsby-transformer-sharp',
+    'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-plugin-google-analytics',
       options: {
@@ -21,56 +58,27 @@ module.exports = {
         respectDNT: true,
       },
     },
+    'gatsby-plugin-feed',
     {
-      resolve: 'gatsby-plugin-favicon',
+      resolve: 'gatsby-plugin-manifest',
       options: {
-        logo: './src/assets/img/favicon.png',
-        icons: {
-          android: true,
-          appleIcon: true,
-          appleStartup: true,
-          coast: false,
-          favicons: true,
-          firefox: true,
-          twitter: false,
-          yandex: false,
-          windows: false,
-        },
+        name: 'Matheus Iácono Blog',
+        short_name: 'Iácono',
+        start_url: '/',
+        background_color: '#ffffff',
+        theme_color: '#0366d6',
+        display: 'minimal-ui',
+        icon: 'content/assets/favicon.png',
       },
     },
+    'gatsby-plugin-offline',
+    'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: 'gatsby-plugin-typography',
       options: {
-        name: 'artigos',
-        path: `${__dirname}/src/artigos/`,
+        pathToConfigModule: 'src/utils/typography',
       },
     },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        name: 'rascunhos',
-        path: `${__dirname}/src/rascunhos/`,
-      },
-    },
-    'gatsby-transformer-remark',
-    {
-      resolve: 'gatsby-plugin-sitemap',
-    },
-    {
-      resolve: 'gatsby-plugin-feed-generator',
-    },
-    {
-      resolve: 'gatsby-plugin-nprogress',
-      options: {
-        color: '#CBF7ED',
-        showSpinner: false,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-react-svg',
-      options: {
-        include: /assets\/svg/,
-      },
-    },
+    'gatsby-plugin-catch-links',
   ],
 };

@@ -1,19 +1,20 @@
 module.exports = {
-  extends: 'airbnb',
-  rules: {
-    'react/jsx-filename-extension': [1, { extensions: ['.js', '.jsx'] }],
-    'jsx-a11y/anchor-is-valid': [
-      'error',
-      {
-        components: ['Link'],
-        specialLink: ['to'],
-      },
-    ],
+  env: {
+    browser: true,
+    es6: true,
   },
-  settings: {
-    'import/core-modules': ['react', 'prop-types', 'glamor'],
+  plugins: ['react'],
+  rules: {
+    quotes: ['error', 'single'],
   },
   globals: {
-    graphql: false,
+    graphql: 'readable',
+  },
+  parserOptions: {
+    ecmaVersion: 2018,
+    sourceType: 'module',
+    ecmaFeatures: {
+      jsx: true,
+    },
   },
 };

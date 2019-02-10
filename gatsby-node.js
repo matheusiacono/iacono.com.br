@@ -1,54 +1,65 @@
 const path = require('path');
+const { createFilePath } = require('gatsby-source-filesystem');
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions;
 
-  const ArticlesTemplate = path.resolve('src/templates/artigos.js');
-  const DraftsTemplate = path.resolve('src/templates/rascunhos.js');
-
-  return new Promise((resolve, reject) => {
-    graphql(`
+  const blogPost = path.resolve('./src/templates/blog-post.js');
+  return graphql(
+    `
       {
-        artigos: allMarkdownRemark(filter: { frontmatter: { type: { eq: "artigos" } } }) {
+        allMarkdownRemark(
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
           edges {
             node {
+              fields {
+                slug
+              }
               frontmatter {
-                path
+                title
               }
             }
           }
         }
-        rascunhos: allMarkdownRemark(filter: { frontmatter: { type: { eq: "rascunhos" } } }) {
-          edges {
-            node {
-              frontmatter {
-                path
-              }
-            }
-          }
-        }
       }
-    `).then((result) => {
-      if (result.errors) {
-        reject(result.errors);
-      }
+    `,
+  ).then(result => {
+    if (result.errors) {
+      throw result.errors;
+    }
 
-      const createPageFromEdge = template => (edge) => {
-        createPage({
-          path: edge.node.frontmatter.path,
-          component: template,
-        });
-      };
+    // Create blog posts pages.
+    const posts = result.data.allMarkdownRemark.edges;
 
-      if (result.data.artigos) {
-        result.data.artigos.edges.forEach(createPageFromEdge(ArticlesTemplate));
-      }
+    posts.forEach((post, index) => {
+      const previous =
+        index === posts.length - 1 ? null : posts[index + 1].node;
+      const next = index === 0 ? null : posts[index - 1].node;
 
-      if (result.data.rascunhos) {
-        result.data.rascunhos.edges.forEach(createPageFromEdge(DraftsTemplate));
-      }
-
-      resolve();
+      createPage({
+        path: post.node.fields.slug,
+        component: blogPost,
+        context: {
+          slug: post.node.fields.slug,
+          previous,
+          next,
+        },
+      });
     });
   });
+};
+
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
+
+  if (node.internal.type === 'MarkdownRemark') {
+    const value = createFilePath({ node, getNode });
+    createNodeField({
+      name: 'slug',
+      node,
+      value,
+    });
+  }
 };

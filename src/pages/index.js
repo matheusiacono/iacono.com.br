@@ -1,49 +1,78 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import { Link, graphql } from 'gatsby';
 
-import Page from '../components/page';
-import PostList, { AllMarkdownRemarkType } from '../components/post-list';
+import Bio from '../components/bio';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
+import { rhythm } from '../utils/typography';
 
-import postImage from '../assets/img/home-background.jpeg';
+class BlogIndex extends React.Component {
+  render() {
+    const { data } = this.props;
+    const siteTitle = data.site.siteMetadata.title;
+    const posts = data.allMarkdownRemark.edges;
 
-const IndexPage = ({ data }) => (
-  <Page title="Sempre Aprendendo" image={postImage}>
-    <p>
-      Olá, me chamo Matheus Iácono, sou desenvolvedor front end e moro em São Paulo. Antes de mudar
-      para cá, morava em Aracaju onde passei a maior parte da minha vida. Gosto de estar
-      constantemente estudando e de compartilhar o conhecimento com outras pessoas.
-    </p>
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO
+          title="Blog"
+          keywords={[
+            'blog',
+            'desenvolvimento',
+            'software',
+            'javascript',
+            'react',
+          ]}
+        />
+        <Bio />
+        {posts.map(({ node }) => {
+          const title = node.frontmatter.title || node.fields.slug;
+          return (
+            <div key={node.fields.slug}>
+              <h3
+                style={{
+                  marginBottom: rhythm(1 / 4),
+                }}
+              >
+                <Link style={{ boxShadow: 'none' }} to={node.fields.slug}>
+                  {title}
+                </Link>
+              </h3>
+              <small>
+                {node.frontmatter.date} &bull; {node.timeToRead} min
+              </small>
+              <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+            </div>
+          );
+        })}
+      </Layout>
+    );
+  }
+}
 
-    <PostList listTitle="Artigos Recentes" items={data.artigos} />
-    <PostList listTitle="Rascunhos Recentes" items={data.rascunhos} />
-  </Page>
-);
+export default BlogIndex;
 
-IndexPage.propTypes = {
-  data: PropTypes.shape({
-    artigos: AllMarkdownRemarkType,
-    rascunhos: AllMarkdownRemarkType,
-  }).isRequired,
-};
-
-export default IndexPage;
-
-export const query = graphql`
-  query IndexPageQuery {
-    artigos: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "artigos" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
-    ) {
-      ...markdownRemarkFields
+export const pageQuery = graphql`
+  query {
+    site {
+      siteMetadata {
+        title
+      }
     }
-
-    rascunhos: allMarkdownRemark(
-      filter: { frontmatter: { type: { eq: "rascunhos" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: 5
-    ) {
-      ...markdownRemarkFields
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+      edges {
+        node {
+          excerpt
+          fields {
+            slug
+          }
+          timeToRead
+          frontmatter {
+            date(formatString: "YYYY-MM-DD")
+            title
+          }
+        }
+      }
     }
   }
 `;
