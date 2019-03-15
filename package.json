@@ -1,13 +1,13 @@
 {
-  "name": "matheus-iacono-blog",
+  "name": "matheus-iacono-site",
   "private": true,
-  "description": "Matheus Iácono | Blog Pessoal | Desenvolvendo software e outras coisas",
+  "description": "Matheus Iácono | Desenvolvedor de software",
   "version": "1.0.0",
-  "author": "Matheus Iacono <matheus@iacono.com.br>",
+  "author": "Matheus Iacono <matheus@iacono.dev>",
   "bugs": {
     "url": "https://github.com/matheusiacono/iacono.com.br/issues"
   },
-  "homepage": "https://iacono.com.br",
+  "homepage": "https://iacono.dev",
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",

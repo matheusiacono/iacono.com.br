@@ -2,21 +2,13 @@ module.exports = {
   siteMetadata: {
     title: 'Matheus Iácono',
     author: 'Matheus Iácono',
-    description:
-      'Matheus Iácono | Blog Pessoal | Desenvolvendo software e outras coisas',
-    siteUrl: 'https://iacono.com.br',
+    description: 'Matheus Iácono | Desenvolvedor de software',
+    siteUrl: 'https://iacono.dev',
     social: {
       twitter: 'matheusiacono',
     },
   },
   plugins: [
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: 'blog',
-      },
-    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
